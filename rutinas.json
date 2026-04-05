@@ -1,0 +1,57 @@
+{
+  "Lunes": {
+    "enfoque": "Pecho y Tríceps",
+    "ejercicios": [
+      { "nombre": "Press de Banca con Barra", "musculo": "Pecho", "tipo": "Compuesto" },
+      { "nombre": "Press Inclinado con Mancuernas", "musculo": "Pecho", "tipo": "Compuesto" },
+      { "nombre": "Aperturas en Polea / Peck Deck", "musculo": "Pecho", "tipo": "Aislamiento" },
+      { "nombre": "Fondos en Paralelas", "musculo": "Tríceps", "tipo": "Compuesto" },
+      { "nombre": "Press Francés con Barra Z", "musculo": "Tríceps", "tipo": "Aislamiento" },
+      { "nombre": "Extensión en Polea Alta", "musculo": "Tríceps", "tipo": "Aislamiento" }
+    ]
+  },
+  "Martes": {
+    "enfoque": "Espalda y Bíceps",
+    "ejercicios": [
+      { "nombre": "Dominadas o Polea al Pecho", "musculo": "Espalda", "tipo": "Compuesto" },
+      { "nombre": "Remo con Barra o en Punta", "musculo": "Espalda", "tipo": "Compuesto" },
+      { "nombre": "Remo Horizontal con Mancuerna", "musculo": "Espalda", "tipo": "Compuesto" },
+      { "nombre": "Pull-over en Polea Alta", "musculo": "Espalda", "tipo": "Aislamiento" },
+      { "nombre": "Curl de Bíceps con Barra Z", "musculo": "Bíceps", "tipo": "Aislamiento" },
+      { "nombre": "Curl Martillo con Mancuerna", "musculo": "Bíceps", "tipo": "Aislamiento" }
+    ]
+  },
+  "Miercoles": {
+    "enfoque": "Piernas Completas",
+    "ejercicios": [
+      { "nombre": "Sentadilla Libre con Barra", "musculo": "Cuádriceps", "tipo": "Compuesto" },
+      { "nombre": "Prensa de Piernas 45°", "musculo": "Cuádriceps", "tipo": "Compuesto" },
+      { "nombre": "Peso Muerto Rumano", "musculo": "Isquios", "tipo": "Compuesto" },
+      { "nombre": "Sillón de Cuádriceps", "musculo": "Cuádriceps", "tipo": "Aislamiento" },
+      { "nombre": "Camilla de Isquios", "musculo": "Isquios", "tipo": "Aislamiento" },
+      { "nombre": "Elevación de Talones", "musculo": "Pantorrilla", "tipo": "Aislamiento" }
+    ]
+  },
+  "Jueves": {
+    "enfoque": "Hombros y Core",
+    "ejercicios": [
+      { "nombre": "Press Militar Barra/Manc.", "musculo": "Hombro", "tipo": "Compuesto" },
+      { "nombre": "Vuelos Laterales con Manc.", "musculo": "Hombro", "tipo": "Aislamiento" },
+      { "nombre": "Pájaros (Hombro Posterior)", "musculo": "Hombro", "tipo": "Aislamiento" },
+      { "nombre": "Rueda Abdominal", "musculo": "Core", "tipo": "Compuesto" },
+      { "nombre": "Elevación de Piernas", "musculo": "Core", "tipo": "Aislamiento" },
+      { "nombre": "Plancha Isométrica", "musculo": "Core", "tipo": "Aislamiento" }
+    ]
+  },
+  "Viernes": {
+    "enfoque": "Full Body / Refuerzo",
+    "ejercicios": [
+      { "nombre": "Peso Muerto Convencional", "musculo": "Global", "tipo": "Compuesto" },
+      { "nombre": "Press de Banca (Variante)", "musculo": "Pecho", "tipo": "Compuesto" },
+      { "nombre": "Remo con Barra", "musculo": "Espalda", "tipo": "Compuesto" },
+      { "nombre": "Zancadas (Lunges)", "musculo": "Piernas", "tipo": "Compuesto" },
+      { "nombre": "Facepulls", "musculo": "Hombro", "tipo": "Aislamiento" },
+      { "nombre": "Bíceps + Tríceps", "musculo": "Brazos", "tipo": "Aislamiento" }
+    ]
+  }
+}
