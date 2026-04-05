@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IRONFLOW PRO — Generador de Rutinas 60 min</title>
-<meta name="description" content="Generador gratuito de rutinas de gimnasio de exactamente 60 minutos. PPL, Full Body y más. Para grupos avanzados.">
+<title>IRONFLOW PRO — Generador de Rutinas 60 min (desde JSON)</title>
+<meta name="description" content="Generador gratuito de rutinas de gimnasio enfocado a PPL, Full Body y más. Para grupos avanzados.">
 
 <!-- Google AdSense — reemplazá ca-pub-XXXXXXXXXX con tu Publisher ID -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
@@ -36,7 +36,6 @@ html { scroll-behavior: smooth; }
 body { background: var(--bg); color: var(--text); font-family: var(--font-b); font-size:16px; line-height:1.5; overflow-x:hidden; }
 
 /* ─── AD PLACEHOLDERS ─────────────────────────────────────────── */
-/* Reemplazá el contenido de .ad-slot con el tag real de AdSense */
 .ad-slot {
   background: #12141a;
   border: 1px dashed #2a2d38;
@@ -51,13 +50,11 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   gap: 4px;
   overflow: hidden;
 }
-
 .ad-slot::before { content: '[ ADSENSE ]'; }
-
-.ad-top    { width:100%; height:90px; }          /* Leaderboard 728×90  */
-.ad-bottom { width:100%; height:90px; }          /* Leaderboard 728×90  */
-.ad-mid    { width:100%; height:280px; margin: 24px 0; } /* Rectangle 336×280 */
-.ad-side   { width:300px; height:600px; flex-shrink:0; }  /* Half page 300×600 */
+.ad-top    { width:100%; height:90px; }
+.ad-bottom { width:100%; height:90px; }
+.ad-mid    { width:100%; height:280px; margin: 24px 0; }
+.ad-side   { width:300px; height:600px; flex-shrink:0; }
 
 /* ─── LAYOUT ──────────────────────────────────────────────────── */
 .page-wrapper { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -68,9 +65,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-bottom: 3px solid var(--accent);
   padding: 0 0 0;
 }
-
 .ad-top-wrap { padding: 8px 20px; display:flex; justify-content:center; background:#000; }
-
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -79,13 +74,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   align-items: center;
   justify-content: space-between;
 }
-
-.logo-mark {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-
+.logo-mark { display: flex; align-items: baseline; gap: 10px; }
 .logo-main {
   font-family: var(--font-d);
   font-weight: 900;
@@ -95,14 +84,12 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   text-shadow: 0 0 30px rgba(240,192,64,0.5);
   line-height: 1;
 }
-
 .logo-version {
   font-family: var(--font-m);
   font-size: 0.65rem;
   color: var(--muted);
   letter-spacing: 3px;
 }
-
 .header-clock {
   font-family: var(--font-m);
   font-size: 1.1rem;
@@ -116,7 +103,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
 }
-
 .hero-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -125,7 +111,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   align-items: center;
   gap: 30px;
 }
-
 .hero-badge {
   background: var(--accent);
   color: #000;
@@ -137,12 +122,10 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-radius: 2px;
   white-space: nowrap;
 }
-
 .hero-desc {
   font-size: 0.88rem;
   color: var(--muted);
 }
-
 .hero-desc strong { color: var(--text); }
 
 /* ─── MAIN GRID ───────────────────────────────────────────────── */
@@ -163,7 +146,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-radius: 8px;
   overflow: hidden;
 }
-
 .panel-header {
   background: #000;
   padding: 16px 22px;
@@ -172,7 +154,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   gap: 12px;
   border-bottom: 2px solid var(--accent);
 }
-
 .panel-title {
   font-family: var(--font-d);
   font-weight: 700;
@@ -180,7 +161,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   letter-spacing: 3px;
   color: var(--accent);
 }
-
 .panel-body { padding: 22px; }
 
 /* TURNO SELECTOR */
@@ -190,7 +170,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   gap: 6px;
   margin-bottom: 20px;
 }
-
 .turno-btn {
   background: var(--surf2);
   border: 1px solid var(--border);
@@ -204,7 +183,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   transition: all 0.15s;
   line-height: 1.3;
 }
-
 .turno-btn:hover { border-color: var(--accent); color: var(--text); }
 .turno-btn.selected { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
 
@@ -215,7 +193,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   gap: 8px;
   margin-bottom: 20px;
 }
-
 .split-btn {
   background: var(--surf2);
   border: 1px solid var(--border);
@@ -230,7 +207,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-radius: 4px;
   transition: all 0.15s;
 }
-
 .split-btn:hover { border-color: var(--accentB); color: var(--text); }
 .split-btn.selected { background: var(--accentB); color: #fff; border-color: var(--accentB); }
 
@@ -244,7 +220,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--muted);
   margin-bottom: 6px;
 }
-
 .field-select {
   width: 100%;
   padding: 11px 14px;
@@ -262,7 +237,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   background-repeat: no-repeat;
   background-position: right 14px center;
 }
-
 .field-select:focus { border-color: var(--accent); }
 .field-select option { background: #111318; }
 
@@ -274,7 +248,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   padding: 16px;
   margin-bottom: 20px;
 }
-
 .gauge-title {
   font-family: var(--font-m);
   font-size: 0.6rem;
@@ -282,7 +255,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--muted);
   margin-bottom: 10px;
 }
-
 .gauge-bar-track {
   height: 8px;
   background: var(--border);
@@ -290,23 +262,19 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   overflow: hidden;
   margin-bottom: 8px;
 }
-
 .gauge-bar-fill {
   height: 100%;
   border-radius: 4px;
   transition: width 0.5s, background 0.3s;
   background: var(--accent);
 }
-
 .gauge-bar-fill.over  { background: var(--danger); }
 .gauge-bar-fill.exact { background: var(--success); }
-
 .gauge-numbers {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-
 .gauge-current {
   font-family: var(--font-d);
   font-weight: 900;
@@ -315,16 +283,13 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--accent);
   transition: color 0.3s;
 }
-
 .gauge-current.over  { color: var(--danger); }
 .gauge-current.exact { color: var(--success); }
-
 .gauge-target {
   font-family: var(--font-m);
   font-size: 0.7rem;
   color: var(--muted);
 }
-
 .gauge-status {
   font-family: var(--font-m);
   font-size: 0.65rem;
@@ -350,7 +315,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   position: relative;
   overflow: hidden;
 }
-
 .btn-generate::after {
   content: '';
   position: absolute;
@@ -358,7 +322,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   background: rgba(255,255,255,0);
   transition: background 0.15s;
 }
-
 .btn-generate:hover::after { background: rgba(255,255,255,0.1); }
 .btn-generate:active { transform: scale(0.98); }
 
@@ -376,13 +339,10 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   transition: all 0.15s;
   margin-top: 8px;
 }
-
 .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ─── ROUTINE OUTPUT ──────────────────────────────────────────── */
 .routine-output { flex: 1; }
-
-/* EMPTY STATE */
 .empty-state {
   background: var(--surf);
   border: 1px solid var(--border);
@@ -390,7 +350,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   padding: 60px 30px;
   text-align: center;
 }
-
 .empty-big {
   font-family: var(--font-d);
   font-weight: 900;
@@ -400,7 +359,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   line-height: 1;
   margin-bottom: 12px;
 }
-
 .empty-sub { color: var(--muted); font-size: 0.9rem; }
 
 /* DAY TABS */
@@ -410,7 +368,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   gap: 4px;
   margin-bottom: 16px;
 }
-
 .day-tab {
   background: var(--surf);
   border: 1px solid var(--border);
@@ -420,9 +377,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   cursor: pointer;
   transition: all 0.15s;
 }
-
 .day-tab:hover:not(.rest) { border-color: var(--accent); }
-
 .day-tab-name {
   font-family: var(--font-d);
   font-weight: 700;
@@ -431,17 +386,14 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--muted);
   display: block;
 }
-
 .day-tab-type {
   font-family: var(--font-m);
   font-size: 0.55rem;
   color: var(--muted);
   margin-top: 2px;
 }
-
 .day-tab.active .day-tab-name { color: var(--accent); }
 .day-tab.active { border-color: var(--accent); background: rgba(240,192,64,0.06); }
-
 .day-tab.rest { cursor: default; opacity: 0.4; }
 .day-tab.rest .day-tab-name { color: var(--border); }
 
@@ -453,10 +405,8 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   overflow: hidden;
   animation: fadeIn 0.3s ease;
 }
-
 @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
 
-/* ROUTINE HEADER */
 .routine-head {
   background: #000;
   padding: 16px 22px;
@@ -465,7 +415,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   justify-content: space-between;
   border-bottom: 2px solid var(--accent);
 }
-
 .routine-title {
   font-family: var(--font-d);
   font-weight: 900;
@@ -473,17 +422,12 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   letter-spacing: 4px;
   color: var(--accent);
 }
-
-.routine-meta {
-  text-align: right;
-}
-
+.routine-meta { text-align: right; }
 .turno-display {
   font-family: var(--font-m);
   font-size: 0.7rem;
   color: var(--muted);
 }
-
 .time-display {
   font-family: var(--font-d);
   font-weight: 700;
@@ -492,22 +436,18 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   letter-spacing: 2px;
 }
 
-/* TIME BAR */
 .time-distribution {
   display: flex;
   height: 6px;
 }
-
 .td-warm  { background: var(--accentB); }
 .td-work  { background: var(--accent); }
 .td-cool  { background: var(--accentC); }
 
-/* EXERCISE TABLE */
 .ex-table {
   width: 100%;
   border-collapse: collapse;
 }
-
 .ex-table th {
   background: var(--surf2);
   padding: 10px 16px;
@@ -518,19 +458,15 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--muted);
   border-bottom: 1px solid var(--border);
 }
-
 .ex-table th.center { text-align: center; }
-
 .ex-table td {
   padding: 13px 16px;
   border-bottom: 1px solid var(--border);
   vertical-align: middle;
   font-size: 0.87rem;
 }
-
 .ex-table tr:last-child td { border-bottom: none; }
 .ex-table tr:hover td { background: rgba(240,192,64,0.02); }
-
 .ex-table tr.segment-row td {
   background: var(--surf2);
   padding: 8px 16px;
@@ -539,7 +475,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   letter-spacing: 2px;
   color: var(--muted);
 }
-
 .ex-name { font-weight: 500; color: var(--text); }
 .ex-muscle {
   display: inline-block;
@@ -547,7 +482,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   font-size: 0.7rem;
   color: var(--muted);
 }
-
 .tag-tipo {
   display: inline-block;
   font-family: var(--font-m);
@@ -557,7 +491,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   margin-left: 6px;
   vertical-align: middle;
 }
-
 .tag-comp { background: rgba(224,90,32,0.15); color: var(--accentB); border: 1px solid rgba(224,90,32,0.3); }
 .tag-aiso { background: rgba(58,214,160,0.1); color: var(--accentC); border: 1px solid rgba(58,214,160,0.2); }
 
@@ -567,7 +500,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   font-size: 0.82rem;
   color: var(--text);
 }
-
 .cell-time {
   text-align: center;
   font-family: var(--font-m);
@@ -577,7 +509,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   background: rgba(240,192,64,0.05);
   border-left: 1px solid var(--border);
 }
-
 .rir-dot {
   display: inline-block;
   font-family: var(--font-m);
@@ -589,7 +520,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border: 1px solid rgba(240,192,64,0.25);
 }
 
-/* TOTALS FOOTER */
 .routine-footer {
   background: #000;
   padding: 14px 22px;
@@ -598,12 +528,10 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   align-items: center;
   border-top: 1px solid var(--border);
 }
-
 .footer-segments {
   display: flex;
   gap: 20px;
 }
-
 .seg-item {
   display: flex;
   align-items: center;
@@ -611,13 +539,11 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   font-size: 0.78rem;
   color: var(--muted);
 }
-
 .seg-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
-
 .footer-total {
   font-family: var(--font-d);
   font-weight: 900;
@@ -626,7 +552,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   letter-spacing: 3px;
 }
 
-/* TECH NOTES */
 .tech-notes {
   background: rgba(240,192,64,0.04);
   border: 1px solid rgba(240,192,64,0.12);
@@ -638,7 +563,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: #bbb;
   line-height: 1.7;
 }
-
 .tech-notes strong { color: var(--accent); }
 
 /* ─── SIDEBAR RIGHT ───────────────────────────────────────────── */
@@ -647,14 +571,12 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   flex-direction: column;
   gap: 20px;
 }
-
 .info-card {
   background: var(--surf);
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
 }
-
 .info-card-head {
   background: var(--surf2);
   padding: 10px 16px;
@@ -664,9 +586,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   color: var(--muted);
   border-bottom: 1px solid var(--border);
 }
-
 .info-card-body { padding: 14px 16px; }
-
 .ref-row {
   display: flex;
   justify-content: space-between;
@@ -675,7 +595,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-bottom: 1px solid var(--border);
   font-size: 0.8rem;
 }
-
 .ref-row:last-child { border-bottom: none; }
 .ref-key { color: var(--muted); }
 .ref-val { font-family: var(--font-m); font-size: 0.72rem; color: var(--accent); }
@@ -685,9 +604,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   border-top: 1px solid var(--border);
   margin-top: 40px;
 }
-
 .ad-bottom-wrap { padding: 12px 20px; display:flex; justify-content:center; background:#000; }
-
 .footer-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -704,7 +621,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   .site-header, .hero-strip, .control-panel, .day-nav,
   .sidebar-right, .site-footer, .ad-slot, .btn-secondary,
   .tech-notes { display: none !important; }
-
+  .page-wrapper { display: none !important; }
   body { background: white; color: #000; }
   .main-grid { display: block; padding: 0; }
   .routine-card { border: 1px solid #ccc; box-shadow: none; }
@@ -722,7 +639,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   .ad-side { display: none; }
   .turno-grid { grid-template-columns: repeat(3,1fr); }
 }
-
 @media (max-width: 600px) {
   .logo-main { font-size: 1.8rem; }
   .turno-grid { grid-template-columns: repeat(3,1fr); }
@@ -733,6 +649,36 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   .ex-table th:nth-child(4),
   .ex-table td:nth-child(4) { display: none; }
 }
+
+/* FAQ */
+.faq-container { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.faq-item { 
+  background: var(--surf2); 
+  border: 1px solid var(--border); 
+  border-radius: 4px; 
+}
+.faq-item[open] { border-color: var(--accent); }
+.faq-question { 
+  padding: 15px; 
+  cursor: pointer; 
+  font-family: var(--font-d); 
+  font-weight: 700; 
+  text-transform: uppercase;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.faq-question::after { content: "▼"; font-size: 0.7rem; color: var(--accent); }
+.faq-item[open] .faq-question::after { content: "▲"; }
+.faq-answer { 
+  padding: 0 15px 15px; 
+  color: var(--muted); 
+  font-size: 0.95rem; 
+  line-height: 1.5;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.faq-answer strong { color: var(--accentC); }
 </style>
 </head>
 <body>
@@ -740,18 +686,12 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
 <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
 <header class="site-header">
   <div class="ad-top-wrap">
-    <!-- AD SLOT TOP — 728×90 Leaderboard -->
-    <!-- Reemplazá esto con tu código de AdSense real -->
-    <div class="ad-slot ad-top">
-      <!-- ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-           data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="YYYYYYYYYY"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script -->
-    </div>
+    <div class="ad-slot ad-top"></div>
   </div>
   <div class="header-inner">
     <div class="logo-mark">
-      <div class="logo-main">IRONFLOW PRO</div>
-      <div class="logo-version">v5.0 // 60 MIN SYSTEM</div>
+      <div class="logo-main">IRONFLOW MAX</div>
+      <div class="logo-version">v5.0 // Organizador de rutinas de Fitness</div>
     </div>
     <div class="header-clock" id="clockEl">--:--:--</div>
   </div>
@@ -761,7 +701,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
   <div class="hero-inner">
     <div class="hero-badge">GRATIS · SIN REGISTRO</div>
     <div class="hero-desc">
-      Generá rutinas de <strong>exactamente 60 minutos</strong> para grupos avanzados.
+      Generá rutinas de ejercicios para grupos avanzados.
       El sistema calcula series, reps y descansos para ajustarse al tiempo del turno.
     </div>
   </div>
@@ -772,26 +712,21 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
 
   <!-- ──────────────── LEFT: CONTROL + OUTPUT ──────────────── -->
   <div>
-    <!-- CONTROL PANEL -->
     <div class="control-panel" style="margin-bottom:20px">
       <div class="panel-header">
         <div class="panel-title">CONFIGURAR SESIÓN</div>
       </div>
       <div class="panel-body">
-
-        <!-- TURNO -->
         <label class="field-label">TURNO</label>
         <div class="turno-grid" id="turnoGrid"></div>
 
-        <!-- SPLIT -->
         <label class="field-label" style="margin-bottom:8px">TIPO DE SPLIT</label>
         <div class="split-row">
-          <div class="split-btn" data-split="ppl" onclick="selectSplit(this)">PPL</div>
+          <div class="split-btn" data-split="ppl" onclick="selectSplit(this)">Push/Pull/Legs</div>
           <div class="split-btn" data-split="ul"  onclick="selectSplit(this)">UPPER<br>LOWER</div>
           <div class="split-btn" data-split="fb"  onclick="selectSplit(this)">FULL<br>BODY</div>
         </div>
 
-        <!-- GAUGE -->
         <div class="gauge-wrap">
           <div class="gauge-title">TIEMPO DE SESIÓN CALCULADO</div>
           <div class="gauge-bar-track">
@@ -809,33 +744,18 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
 
         <button class="btn-generate" onclick="buildRoutine()">GENERAR RUTINA</button>
         <button class="btn-secondary" onclick="printRoutine()">IMPRIMIR / GUARDAR PDF</button>
-
       </div>
     </div>
 
-    <!-- AD MID -->
-    <div class="ad-slot ad-mid">
-      <!-- Reemplazá esto con tu código de AdSense real (336×280 recomendado) -->
-      <!-- ins class="adsbygoogle" style="display:block;width:336px;height:280px"
-           data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="ZZZZZZZZZZ"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script -->
-    </div>
+    <div class="ad-slot ad-mid"></div>
 
-    <!-- ROUTINE OUTPUT -->
     <div class="routine-output">
-      <!-- EMPTY STATE -->
       <div class="empty-state" id="emptyState">
         <div class="empty-big">60'</div>
         <div class="empty-sub">Elegí el turno y el tipo de split para generar la rutina</div>
       </div>
-
-      <!-- DAY NAV (hidden until generated) -->
       <div class="day-nav" id="dayNav" style="display:none"></div>
-
-      <!-- ROUTINE CARD -->
       <div id="routineCard" style="display:none"></div>
-
-      <!-- TECH NOTES -->
       <div class="tech-notes" id="techNotes" style="display:none">
         <strong>PRINCIPIOS APLICADOS:</strong>
         Ejercicios multiarticulares primero (Principio de Prioridad) → mayor output neuromuscular cuando el sistema está fresco.
@@ -848,16 +768,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
 
   <!-- ──────────────── RIGHT SIDEBAR ──────────────── -->
   <div class="sidebar-right">
-
-    <!-- AD SIDE -->
-    <div class="ad-slot ad-side">
-      <!-- Reemplazá esto con tu código de AdSense real (300×600) -->
-      <!-- ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px"
-           data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="WWWWWWWWWW"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script -->
-    </div>
-
-    <!-- REF CARD -->
+    <div class="ad-slot ad-side"></div>
     <div class="info-card">
       <div class="info-card-head">REF. TÉCNICA</div>
       <div class="info-card-body">
@@ -871,8 +782,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
         <div class="ref-row"><span class="ref-key">Desc. aislamientos</span><span class="ref-val">45–60 s</span></div>
       </div>
     </div>
-
-    <!-- SPLIT INFO -->
     <div class="info-card">
       <div class="info-card-head">SPLITS DISPONIBLES</div>
       <div class="info-card-body">
@@ -881,80 +790,189 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); fo
         <div class="ref-row"><span class="ref-key">Full Body</span><span class="ref-val">3 DÍAS/SEM</span></div>
       </div>
     </div>
-
   </div>
+
+  <section class="page-wrapper" style="margin-top: 40px; margin-bottom: 80px;">
+    <div style="background: var(--surf); border: 1px dashed var(--border); padding: 20px; border-radius: 8px;">
+      <h2 style="font-family: var(--font-d); color: var(--accent); margin-bottom: 25px; letter-spacing: 2px; text-transform: uppercase;">
+        Preguntas Frecuentes y Metodología
+      </h2>
+      <div class="faq-container">
+        <details class="faq-item">
+          <summary class="faq-question">¿Por qué las rutinas duran exactamente 60 minutos?</summary>
+          <div class="faq-answer">
+            La mayoría de los gimnasios funcionan con turnos de una hora. Este sistema optimiza la rotación de alumnos, evitando retrasos en el inicio de la siguiente clase y garantizando una gestión profesional del tiempo y el espacio.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">¿Qué significa RIR 1 y por qué se aplica aquí?</summary>
+          <div class="faq-answer">
+            El <strong>RIR 1 (Reps In Reserve)</strong> significa terminar la serie sintiendo que podrías haber realizado una repetición más con técnica perfecta. Se utiliza para asegurar una intensidad alta sin llegar al fallo muscular total, permitiendo una mejor recuperación en grupos que entrenan con frecuencia.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">¿Cómo calcula el sistema el tiempo de cada ejercicio?</summary>
+          <div class="faq-answer">
+            El algoritmo calcula el tiempo basándose en un "tempo" controlado (aprox. 4 segundos por repetición) sumado a los periodos de descanso programados. Así se asegura que el volumen de trabajo encaje en el bloque de 60 minutos.
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">¿Es gratuita para siempre?</summary>
+          <div class="faq-answer">
+            Sí. El acceso a <strong>IRONFLOW PRO</strong> es libre y sin registro para apoyar a la comunidad de profesores. El mantenimiento se financia mediante publicidad mínima no intrusiva.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 </div>
 
-<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
 <footer class="site-footer">
   <div class="ad-bottom-wrap">
-    <!-- AD SLOT BOTTOM — 728×90 Leaderboard -->
-    <div class="ad-slot ad-bottom">
-      <!-- ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px"
-           data-ad-client="ca-pub-XXXXXXXXXX" data-ad-slot="VVVVVVVVVV"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script -->
-    </div>
+    <div class="ad-slot ad-bottom"></div>
   </div>
   <div class="footer-inner">
     <div>IRONFLOW PRO v5.0 — Sistema de programación 60 min</div>
-    <div>Gratis · Sin registro · Sin cookies de seguimiento</div>
+    <div><a href="privacidad.html" style="color: var(--muted); text-decoration: underline;">Privacidad y Términos</a></div>
   </div>
 </footer>
 
-
-<!-- ═══════════════════════════════ SCRIPT ═══════════════════════════════ -->
 <script>
-/* ══════════════════════════════════════════════════
-   EXERCISE DATABASE  (from official table)
-   tempo: 4 sec/rep  (2 exc + 2 conc)
-   tRep in seconds
-   rest in seconds
-══════════════════════════════════════════════════ */
-const DB = {
-  push: [
-    { n:"Press de banca plano con barra",   m:"Pecho",          tipo:"comp", s:4, rLo:6,  rHi:8,  tRep:4, rest:105, rir:"RIR 1" },
-    { n:"Press inclinado con mancuernas",   m:"Pecho",          tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:70,  rir:"RIR 1" },
-    { n:"Press militar con barra",          m:"Hombros",        tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:75,  rir:"RIR 1" },
-    { n:"Extensión de tríceps en cuerda",   m:"Tríceps",        tipo:"aiso", s:3, rLo:12, rHi:15, tRep:4, rest:50,  rir:"RIR 1-2" },
-    { n:"Elevaciones laterales",            m:"Deltoides medio",tipo:"aiso", s:3, rLo:12, rHi:15, tRep:4, rest:45,  rir:"RIR 1-2" },
-  ],
-  pull: [
-    { n:"Dominadas (lastre opcional)",      m:"Espalda",        tipo:"comp", s:4, rLo:6,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Remo con barra",                   m:"Espalda",        tipo:"comp", s:4, rLo:8,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Curl de bíceps con barra",         m:"Bíceps",         tipo:"aiso", s:3, rLo:8,  rHi:10, tRep:4, rest:60,  rir:"RIR 1" },
-    { n:"Curl martillo con mancuernas",     m:"Bíceps/Braquial",tipo:"aiso", s:3, rLo:10, rHi:12, tRep:4, rest:50,  rir:"RIR 1-2" },
-  ],
-  legs: [
-    { n:"Sentadilla libre",                 m:"Piernas completas",tipo:"comp",s:4, rLo:6,  rHi:8,  tRep:4, rest:120, rir:"RIR 1" },
-    { n:"Peso muerto rumano",               m:"Isquiosurales",  tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Prensa de piernas",                m:"Cuádriceps",     tipo:"comp", s:3, rLo:10, rHi:12, tRep:4, rest:75,  rir:"RIR 1" },
-    { n:"Elevación de talones de pie",      m:"Gemelos",        tipo:"aiso", s:4, rLo:15, rHi:20, tRep:4, rest:45,  rir:"RIR 1-2" },
-  ],
-  upper: [
-    { n:"Press de banca plano con barra",   m:"Pecho",          tipo:"comp", s:4, rLo:6,  rHi:8,  tRep:4, rest:105, rir:"RIR 1" },
-    { n:"Remo con barra",                   m:"Espalda",        tipo:"comp", s:4, rLo:8,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Press militar con barra",          m:"Hombros",        tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:75,  rir:"RIR 1" },
-    { n:"Curl de bíceps con barra",         m:"Bíceps",         tipo:"aiso", s:3, rLo:8,  rHi:10, tRep:4, rest:60,  rir:"RIR 1" },
-    { n:"Extensión de tríceps en cuerda",   m:"Tríceps",        tipo:"aiso", s:3, rLo:12, rHi:15, tRep:4, rest:50,  rir:"RIR 1-2" },
-  ],
-  lower: [
-    { n:"Sentadilla libre",                 m:"Piernas completas",tipo:"comp",s:4, rLo:6,  rHi:8,  tRep:4, rest:120, rir:"RIR 1" },
-    { n:"Peso muerto rumano",               m:"Isquiosurales",  tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Prensa de piernas",                m:"Cuádriceps",     tipo:"comp", s:3, rLo:10, rHi:12, tRep:4, rest:75,  rir:"RIR 1" },
-    { n:"Elevación de talones de pie",      m:"Gemelos",        tipo:"aiso", s:4, rLo:15, rHi:20, tRep:4, rest:45,  rir:"RIR 1-2" },
-  ],
-  fb: [
-    { n:"Sentadilla libre",                 m:"Piernas completas",tipo:"comp",s:3, rLo:8,  rHi:10, tRep:4, rest:100, rir:"RIR 1" },
-    { n:"Press de banca plano con barra",   m:"Pecho",          tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:90,  rir:"RIR 1" },
-    { n:"Remo con barra",                   m:"Espalda",        tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:85,  rir:"RIR 1" },
-    { n:"Press militar con barra",          m:"Hombros",        tipo:"comp", s:3, rLo:8,  rHi:10, tRep:4, rest:70,  rir:"RIR 1" },
-    { n:"Curl de bíceps con barra",         m:"Bíceps",         tipo:"aiso", s:2, rLo:10, rHi:12, tRep:4, rest:50,  rir:"RIR 1-2" },
-    { n:"Elevaciones laterales",            m:"Deltoides medio",tipo:"aiso", s:2, rLo:12, rHi:15, tRep:4, rest:45,  rir:"RIR 1-2" },
-  ]
-};
+/* ═══════════════════════════════════════════════════════════════════════
+   AHORA CARGAMOS LAS RUTINAS DESDE rutinas.json (EXTERNO)
+   Y LAS TRANSFORMAMOS AL FORMATO QUE ESPERA EL MOTOR.
+═══════════════════════════════════════════════════════════════════════ */
+
+let DB = null;   // se llenará después del fetch
+
+// Función que transforma el JSON externo al formato interno (push, pull, legs, upper, lower, fb)
+function convertJSONtoDB(json) {
+  const mapDiaACategoria = {
+    'Lunes': 'push',
+    'Martes': 'pull',
+    'Miércoles': 'legs',
+    'Miercoles': 'legs',      // por si hay tilde
+    'Jueves': 'upper',
+    'Viernes': 'fb'
+  };
+
+  const nuevaDB = {
+    push: [],
+    pull: [],
+    legs: [],
+    upper: [],
+    lower: [],   // lo usaremos solo si hiciera falta, pero lo dejamos
+    fb: []
+  };
+
+  for (const [dia, contenido] of Object.entries(json)) {
+    const categoria = mapDiaACategoria[dia];
+    if (!categoria) continue;
+
+    for (let ej of contenido.ejercicios) {
+      const esCompuesto = ej.tipo === 'Compuesto';
+      const seriesBase = esCompuesto ? 3 : 2;
+      const rLo = esCompuesto ? 6 : 10;
+      const rHi = esCompuesto ? 10 : 15;
+      const rest = esCompuesto ? 90 : 60;
+      const rir = esCompuesto ? 'RIR 1' : 'RIR 1-2';
+
+      nuevaDB[categoria].push({
+        n: ej.nombre,
+        m: ej.musculo,
+        tipo: esCompuesto ? 'comp' : 'aiso',
+        s: seriesBase,
+        rLo: rLo,
+        rHi: rHi,
+        tRep: 4,      // 4 segundos por rep (2 exc + 2 conc)
+        rest: rest,
+        rir: rir
+      });
+    }
+  }
+  return nuevaDB;
+}
+
+// Función para cargar el JSON y luego iniciar la interfaz
+async function cargarRutinas() {
+  try {
+    const resp = await fetch('rutinas.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    DB = convertJSONtoDB(data);
+    console.log('✅ Rutinas cargadas desde JSON', DB);
+    // Una vez cargado, habilitamos la interfaz (ya está todo listo)
+    iniciarInterfaz();
+  } catch (err) {
+    console.error('❌ Error cargando rutinas.json:', err);
+    alert('No se pudo cargar el archivo de rutinas. Verificá que esté en la misma carpeta y se llame "rutinas.json".');
+    // Mostrar un mensaje en la interfaz
+    document.getElementById('emptyState').innerHTML = '<div class="empty-big">⚠️</div><div class="empty-sub">Error: No se encontró rutinas.json. Asegurate de que el archivo esté en la misma carpeta.</div>';
+  }
+}
+
+// Inicializa los componentes que dependen de DB (turnos, selectores, etc.)
+function iniciarInterfaz() {
+  buildTurnoGrid();
+  // Como ya existen los event listeners globales (selectSplit, etc.) y ahora DB está llena,
+  // podemos actualizar el gauge por si hay alguna selección previa.
+  updateGauge();
+}
 
 /* ══════════════════════════════════════════════════
-   SPLIT PATTERNS  (Lun-Vie always shown)
+   MOTOR DE 60 MINUTOS (ajuste de series)
+══════════════════════════════════════════════════ */
+const WARM_SEC = 600;   // 10 min
+const WORK_SEC = 2700;  // 45 min
+const COOL_SEC = 300;   //  5 min
+
+function calcExSec(ex) {
+  const rMed = (ex.rLo + ex.rHi) / 2;
+  const serieWork = rMed * ex.tRep;
+  return (ex.s * serieWork) + ((ex.s - 1) * ex.rest);
+}
+
+function calcTotalWorkSec(exercises) {
+  return exercises.reduce((sum, ex) => sum + calcExSec(ex), 0);
+}
+
+function adjustTo45Min(baseExercises) {
+  let exs = baseExercises.map(e => ({ ...e }));
+  let totalWork = calcTotalWorkSec(exs);
+  let iterations = 0;
+  const MAX_ITER = 80;
+
+  while (Math.abs(totalWork - WORK_SEC) > 30 && iterations < MAX_ITER) {
+    iterations++;
+    if (totalWork < WORK_SEC) {
+      let best = null, bestIdx = -1;
+      exs.forEach((ex, i) => {
+        if (ex.s < 6) {
+          if (!best || ex.rest > best.rest) { best = ex; bestIdx = i; }
+        }
+      });
+      if (bestIdx === -1) break;
+      exs[bestIdx].s++;
+    } else {
+      let worst = null, worstIdx = -1;
+      ['aiso','comp'].forEach(tipo => {
+        exs.forEach((ex, i) => {
+          if (ex.tipo === tipo && ex.s > 1) {
+            if (!worst || ex.rest < worst.rest) { worst = ex; worstIdx = i; }
+          }
+        });
+        if (worstIdx !== -1) return;
+      });
+      if (worstIdx === -1) break;
+      exs[worstIdx].s--;
+    }
+    totalWork = calcTotalWorkSec(exs);
+  }
+  return exs;
+}
+
+/* ══════════════════════════════════════════════════
+   SPLIT PATTERNS
 ══════════════════════════════════════════════════ */
 const SPLITS = {
   ppl: {
@@ -990,85 +1008,6 @@ const SPLITS = {
 };
 
 /* ══════════════════════════════════════════════════
-   60-MINUTE ENGINE
-   Fixed structure:
-     Calentamiento  = 10 min  (600 s)
-     Trabajo        = 45 min  (2700 s) ← exercises fill this
-     Vuelta a calma =  5 min  (300 s)
-   Total = 60 min
-
-   Algorithm:
-   1. Start with base exercises (sorted: comp first)
-   2. Calculate total work time
-   3. If under 2700s → add series to longest-rest exercises
-   4. If over  2700s → remove last series from shortest exercises first
-   5. Repeat until within ±30s of 2700s
-══════════════════════════════════════════════════ */
-
-const WARM_SEC  = 600;   // 10 min
-const WORK_SEC  = 2700;  // 45 min
-const COOL_SEC  = 300;   //  5 min
-const TOTAL_SEC = 1800;  // 60 min  (actually WARM+WORK+COOL = 3600)
-
-function calcExSec(ex) {
-  // Time for one series = reps * tRep
-  const rMed = (ex.rLo + ex.rHi) / 2;
-  const serieWork = rMed * ex.tRep;          // seconds of actual lifting
-  // Total = (series * work) + (series-1) * rest
-  return (ex.s * serieWork) + ((ex.s - 1) * ex.rest);
-}
-
-function calcTotalWorkSec(exercises) {
-  return exercises.reduce((sum, ex) => sum + calcExSec(ex), 0);
-}
-
-function adjustTo45Min(baseExercises) {
-  // Deep clone
-  let exs = baseExercises.map(e => ({ ...e }));
-
-  let totalWork = calcTotalWorkSec(exs);
-
-  let iterations = 0;
-  const MAX_ITER = 80;
-
-  while (Math.abs(totalWork - WORK_SEC) > 30 && iterations < MAX_ITER) {
-    iterations++;
-
-    if (totalWork < WORK_SEC) {
-      // Under budget → add series to the exercise that will increase time most
-      // (prefer compound, avoid maxing out)
-      let best = null, bestIdx = -1;
-      exs.forEach((ex, i) => {
-        if (ex.s < 6) {   // cap at 6 series
-          if (!best || ex.rest > best.rest) { best = ex; bestIdx = i; }
-        }
-      });
-      if (bestIdx === -1) break;   // can't add more
-      exs[bestIdx].s++;
-    } else {
-      // Over budget → remove series from the exercise that will reduce time most
-      // (prefer isolation, minimum 1 series)
-      let worst = null, worstIdx = -1;
-      // Try isolations first, then compounds
-      ['aiso','comp'].forEach(tipo => {
-        exs.forEach((ex, i) => {
-          if (ex.tipo === tipo && ex.s > 1) {
-            if (!worst || ex.rest < worst.rest) { worst = ex; worstIdx = i; }
-          }
-        });
-        if (worstIdx !== -1) return;
-      });
-      if (worstIdx === -1) break;
-      exs[worstIdx].s--;
-    }
-
-    totalWork = calcTotalWorkSec(exs);
-  }
-
-  return exs;
-}
-
-/* ══════════════════════════════════════════════════
    STATE
 ══════════════════════════════════════════════════ */
 let selectedTurno = null;
@@ -1077,7 +1016,7 @@ let weekPlan      = [];
 let activeDayIdx  = 0;
 
 /* ══════════════════════════════════════════════════
-   TURNO GENERATOR  (06:00 → 23:00)
+   TURNO GENERATOR
 ══════════════════════════════════════════════════ */
 function buildTurnoGrid() {
   const grid = document.getElementById('turnoGrid');
@@ -1099,9 +1038,6 @@ function selectTurno(el, from, to) {
   updateGauge();
 }
 
-/* ══════════════════════════════════════════════════
-   SPLIT SELECTOR
-══════════════════════════════════════════════════ */
 function selectSplit(el) {
   document.querySelectorAll('.split-btn').forEach(b => b.classList.remove('selected'));
   el.classList.add('selected');
@@ -1109,37 +1045,27 @@ function selectSplit(el) {
   updateGauge();
 }
 
-/* ══════════════════════════════════════════════════
-   GAUGE UPDATER
-══════════════════════════════════════════════════ */
 function updateGauge() {
-  if (!selectedSplit) return;
-
-  // Use first training day to preview
+  if (!DB || !selectedSplit) return;
   const pattern = SPLITS[selectedSplit];
   const firstTraining = pattern.days.find(d => d.type !== null);
   if (!firstTraining) return;
-
   const base = [...DB[firstTraining.type]].sort((a,b) =>
     a.tipo === 'comp' && b.tipo === 'aiso' ? -1 :
     a.tipo === 'aiso' && b.tipo === 'comp' ? 1 : 0
   );
   const adjusted = adjustTo45Min(base);
-  const workSec  = calcTotalWorkSec(adjusted);
+  const workSec = calcTotalWorkSec(adjusted);
   const totalSec = WARM_SEC + workSec + COOL_SEC;
   const totalMin = Math.round(totalSec / 60);
-
-  const fill    = document.getElementById('gaugeFill');
-  const numEl   = document.getElementById('gaugeNum');
-  const statEl  = document.getElementById('gaugeStatus');
-
+  const fill = document.getElementById('gaugeFill');
+  const numEl = document.getElementById('gaugeNum');
+  const statEl = document.getElementById('gaugeStatus');
   const pct = Math.min((totalMin / 60) * 100, 110);
   fill.style.width = pct + '%';
-
   numEl.textContent = totalMin;
   fill.classList.remove('over','exact');
   numEl.classList.remove('over','exact');
-
   if (totalMin === 60) {
     fill.classList.add('exact');
     numEl.classList.add('exact');
@@ -1156,43 +1082,32 @@ function updateGauge() {
   }
 }
 
-/* ══════════════════════════════════════════════════
-   BUILD ROUTINE
-══════════════════════════════════════════════════ */
 function buildRoutine() {
+  if (!DB) { alert('Las rutinas aún no se cargaron. Esperá un momento.'); return; }
   if (!selectedTurno) { alert('Elegí un turno primero'); return; }
   if (!selectedSplit) { alert('Elegí un tipo de split'); return; }
 
   const pattern = SPLITS[selectedSplit];
-
   weekPlan = pattern.days.map(dayDef => {
     if (!dayDef.type) return { ...dayDef, exercises: null, workSec: 0 };
-
     const base = [...DB[dayDef.type]].sort((a,b) =>
       a.tipo === 'comp' && b.tipo === 'aiso' ? -1 :
       a.tipo === 'aiso' && b.tipo === 'comp' ? 1 : 0
     );
     const adjusted = adjustTo45Min(base);
-    const workSec  = calcTotalWorkSec(adjusted);
+    const workSec = calcTotalWorkSec(adjusted);
     return { ...dayDef, exercises: adjusted, workSec };
   });
 
-  // Render day nav
   renderDayNav();
-
-  // Find first training day
   activeDayIdx = weekPlan.findIndex(d => d.exercises !== null);
   renderDay(activeDayIdx);
-
-  document.getElementById('emptyState').style.display   = 'none';
-  document.getElementById('dayNav').style.display        = 'grid';
-  document.getElementById('routineCard').style.display   = 'block';
-  document.getElementById('techNotes').style.display     = 'block';
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('dayNav').style.display = 'grid';
+  document.getElementById('routineCard').style.display = 'block';
+  document.getElementById('techNotes').style.display = 'block';
 }
 
-/* ══════════════════════════════════════════════════
-   DAY NAV
-══════════════════════════════════════════════════ */
 function renderDayNav() {
   const nav = document.getElementById('dayNav');
   nav.innerHTML = weekPlan.map((day, i) => {
@@ -1213,28 +1128,21 @@ function selectDay(idx) {
   renderDay(idx);
 }
 
-/* ══════════════════════════════════════════════════
-   RENDER ONE DAY
-══════════════════════════════════════════════════ */
 function renderDay(idx) {
   const day = weekPlan[idx];
   if (!day.exercises) return;
+  const exs = day.exercises;
+  const workSec = Math.round(day.workSec);
+  const totalSec = WARM_SEC + workSec + COOL_SEC;
+  const totalMin = Math.round(totalSec / 60);
+  const wPct = (WARM_SEC / totalSec * 100).toFixed(1);
+  const wkPct = (workSec / totalSec * 100).toFixed(1);
+  const cPct = (COOL_SEC / totalSec * 100).toFixed(1);
 
-  const exs       = day.exercises;
-  const workSec   = Math.round(day.workSec);
-  const totalSec  = WARM_SEC + workSec + COOL_SEC;
-  const totalMin  = Math.round(totalSec / 60);
-
-  // Time distribution bar widths
-  const wPct  = (WARM_SEC / totalSec * 100).toFixed(1);
-  const wkPct = (workSec  / totalSec * 100).toFixed(1);
-  const cPct  = (COOL_SEC / totalSec * 100).toFixed(1);
-
-  // Exercise rows
   let rowsHTML = '';
   exs.forEach((ex, i) => {
-    const exSec  = Math.round(calcExSec(ex));
-    const exMin  = (exSec / 60).toFixed(1);
+    const exSec = Math.round(calcExSec(ex));
+    const exMin = (exSec / 60).toFixed(1);
     const tagCls = ex.tipo === 'comp' ? 'tag-comp' : 'tag-aiso';
     const tagTxt = ex.tipo === 'comp' ? 'COMPUESTO' : 'AISLAMIENTO';
     rowsHTML += `
@@ -1253,7 +1161,6 @@ function renderDay(idx) {
   });
 
   const turnoLabel = selectedTurno ? selectedTurno.label : '--';
-
   document.getElementById('routineCard').innerHTML = `
     <div class="routine-card">
       <div class="time-distribution">
@@ -1261,7 +1168,6 @@ function renderDay(idx) {
         <div class="td-work"  style="width:${wkPct}%" title="Trabajo ${(workSec/60).toFixed(0)} min"></div>
         <div class="td-cool"  style="width:${cPct}%"  title="Vuelta calma 5 min"></div>
       </div>
-
       <div class="routine-head">
         <div class="routine-title">${day.d} — ${day.label}</div>
         <div class="routine-meta">
@@ -1269,30 +1175,16 @@ function renderDay(idx) {
           <div class="time-display">${totalMin} MIN ✓</div>
         </div>
       </div>
-
       <table class="ex-table">
         <thead>
-          <tr>
-            <th style="width:30px">#</th>
-            <th>EJERCICIO / GRUPO</th>
-            <th class="center">SERIES</th>
-            <th class="center">REPS</th>
-            <th class="center">RIR</th>
-            <th class="center">DESCANSO</th>
-            <th class="center">TIEMPO</th>
-          </tr>
+          <tr><th style="width:30px">#</th><th>EJERCICIO / GRUPO</th><th class="center">SERIES</th><th class="center">REPS</th><th class="center">RIR</th><th class="center">DESCANSO</th><th class="center">TIEMPO</th></tr>
         </thead>
         <tbody>
-          <tr class="segment-row">
-            <td colspan="7">▶ CALENTAMIENTO DINÁMICO — 10 MIN</td>
-          </tr>
+          <tr class="segment-row"><td colspan="7">▶ CALENTAMIENTO DINÁMICO — 10 MIN</td></tr>
           ${rowsHTML}
-          <tr class="segment-row">
-            <td colspan="7">▶ VUELTA A LA CALMA / ELONGACIÓN — 5 MIN</td>
-          </tr>
+          <tr class="segment-row"><td colspan="7">▶ VUELTA A LA CALMA / ELONGACIÓN — 5 MIN</td></tr>
         </tbody>
       </table>
-
       <div class="routine-footer">
         <div class="footer-segments">
           <div class="seg-item"><div class="seg-dot" style="background:var(--accentB)"></div> Calentamiento 10 min</div>
@@ -1305,9 +1197,11 @@ function renderDay(idx) {
   `;
 }
 
-/* ══════════════════════════════════════════════════
-   CLOCK
-══════════════════════════════════════════════════ */
+function printRoutine() {
+  if (weekPlan.length === 0) { alert('Generá una rutina primero'); return; }
+  window.print();
+}
+
 function tick() {
   const n = new Date();
   document.getElementById('clockEl').textContent =
@@ -1317,18 +1211,8 @@ function tick() {
 setInterval(tick, 1000);
 tick();
 
-/* ══════════════════════════════════════════════════
-   PRINT
-══════════════════════════════════════════════════ */
-function printRoutine() {
-  if (weekPlan.length === 0) { alert('Generá una rutina primero'); return; }
-  window.print();
-}
-
-/* ══════════════════════════════════════════════════
-   INIT
-══════════════════════════════════════════════════ */
-buildTurnoGrid();
+// Iniciamos la carga asíncrona de rutinas.json
+cargarRutinas();
 </script>
 </body>
 </html>
