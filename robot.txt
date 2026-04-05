@@ -1,0 +1,8 @@
+# robots.txt para ironflowmax.netlify.app
+# Permite la indexación completa del sitio
+
+User-agent: *
+Allow: /
+
+# Ruta al sitemap XML
+Sitemap: https://ironflowmax.netlify.app/sitemap.xml
