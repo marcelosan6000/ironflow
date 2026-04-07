@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Ruta al sitemap XML
-Sitemap: https://ironflowmax.netlify.app/sitemap.xml
+Sitemap: https://marcelosan6000.github.io/ironflow/sitemap.xml
